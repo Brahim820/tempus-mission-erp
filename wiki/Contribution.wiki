@@ -20,7 +20,7 @@ svn copy https://tempus-mission-erp.googlecode.com/svn/trunk https://tempus-miss
  {{{
  svn switch ^/branches/my_branch
  }}}
- ou
+ ou (pour retourner à trunk)
  {{{
  svn switch ^/trunk
  }}}
