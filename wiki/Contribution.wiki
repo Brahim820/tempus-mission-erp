@@ -1,0 +1,44 @@
+#summary svn commands
+
+= Introduction =
+
+Informations utiles pour contribuer votre code.
+
+
+= Branches =
+
+Les branches dans svn sont des dossiers copies (cheap copies).
+
+Il faut créer des branches quand les modifications sont volumineuses et pourraient contenir plusieurs commits.
+
+ * Créer un branche
+ {{{
+svn copy https://tempus-mission-erp.googlecode.com/svn/trunk https://tempus-mission-erp.googlecode.com/svn/branches/my_branch -m 'create branch my_branch'
+ }}}
+
+ * Basculer
+ comment
+ tatkj
+ {{{
+ svn switch ^/branches/my_branch
+ }}}
+ ou
+ {{{
+ svn switch ^/trunk
+ }}}
+
+ * Faire les modifications
+
+ * Voir l'état
+ {{{
+ svn status
+ }}}
+
+ * Commit
+ {{{
+ svn commit -m 'my_branch: did something'
+ }}}
+
+ * Request code review
+
+ * Merge (coming soon)
