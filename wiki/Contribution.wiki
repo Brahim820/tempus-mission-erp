@@ -17,8 +17,6 @@ svn copy https://tempus-mission-erp.googlecode.com/svn/trunk https://tempus-miss
  }}}
 
  * Basculer
- comment
- tatkj
  {{{
  svn switch ^/branches/my_branch
  }}}
