@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+        	<record model="ir.ui.view" id="reports_form_view">
+            <field name="name">grh.professor.report.wizard.form</field>
+            <field name="model">grh.professor.report.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<form string="Print Certification of quittement territory" version="7.0">
+					<field name="professor_id" />
+					<field name="reason"/>
+					<field name="address"/>
+					<footer>
+						<button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
+						<button type="object" name="print_report_test" string="Print" icon="gtk-ok" confirm="Are you sure you want to print?"/>
+					</footer>
+				</form>
+            </field>
+        </record>
+        
+	    <act_window id="act_reports_print"	
+			name="Print report" 	
+			src_model="grh.professor"		
+			res_model="grh.professor.report.wizard"
+			view_mode="form"
+			target="new"
+			key2="client_print_multi"/>
+				
+    </data>
+</openerp>

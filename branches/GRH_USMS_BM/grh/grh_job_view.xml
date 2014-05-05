@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_professor_job_form" model="ir.ui.view">
+            <field name="name">grh.professor.job.form</field>
+            <field name="model">grh.professor.job</field>
+            <field name="arch" type="xml">
+                <form string="Professor jobs" version="7.0">
+					<sheet>
+						<label for="job" class="oe_edit_only"/>
+						<h2>
+							<field name="job"/>
+						</h2>
+						<group>
+							<group >
+								<field name="professor_id"/>
+								<field name="grade"/>
+							</group>
+							<group >	
+								<field name="scale"  />
+								<field name="scale_effect_date"/>
+							</group>
+							<group >	
+								<field name="echelon"   />
+								<field name="echelon_effect_date"  />
+							</group>
+							<group >
+								<field name="current_state"/>
+							</group >
+						</group>
+					</sheet>
+				</form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_professor_job_tree">
+        <field name="name">grh.professor.job.tree</field>
+        <field name="model">grh.professor.job</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Professor jobs" >
+				<field name="job"/>
+				<field name="grade"/>
+				<field name="category"  />
+				<field name="scale"  />
+				<field name="echelon"  />
+				<field name="current_state"  />
+				<field name="support"  />
+			</tree>
+        </field>
+    </record>
+	<record model="ir.actions.act_window" id="act_professor_job_view">
+        <field name="name">Jobs</field>
+        <field name="res_model">grh.professor.job</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+		<field name="help" type="html"><p class="oe_view_nocontent_create">Click to define a new record.</p></field>
+    </record>
+	
+    <record id="view_administrator_job_form" model="ir.ui.view">
+            <field name="name">grh.administrator.job.form</field>
+            <field name="model">grh.administrator.job</field>
+            <field name="arch" type="xml">
+                <form string="Administrator jobs" version="7.0">
+					<sheet>
+						<label for="job" class="oe_edit_only"/>
+						<h2>
+							<field name="job"/>
+						</h2>
+						<group>
+							<group >
+								<field name="administrator_id"/>
+								<field name="grade"/>
+							</group>
+							<group >	
+								<field name="scale"  />
+								<field name="scale_effect_date"/>
+							</group>
+							<group >	
+								<field name="echelon"   />
+								<field name="echelon_effect_date"  />
+							</group>
+							<group >
+								<field name="current_state"/>
+							</group >
+						</group>
+					</sheet>
+				</form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_administrator_job_tree">
+        <field name="name">grh.administrator.job.tree</field>
+        <field name="model">grh.administrator.job</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Administrator jobs" >
+				<field name="job"/>
+				<field name="grade"/>
+				<field name="scale"  />
+				<field name="echelon"  />
+				<field name="current_state"  />
+				<field name="support"  />
+			</tree>
+        </field>
+    </record>
+	<record model="ir.actions.act_window" id="act_administrator_job_view">
+        <field name="name">Jobs</field>
+        <field name="res_model">grh.administrator.job</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+		<field name="help" type="html"><p class="oe_view_nocontent_create">Click to define a new record.</p></field>
+    </record>
+	
+	<menuitem name="Jobs" id="menu_jobs" parent="menu_human_resources" />
+    <menuitem name="Professor jobs" id="menu_professor_jobs" parent="menu_jobs" action="act_professor_job_view"/>
+	<menuitem name="Administrator jobs" id="menu_administrator_jobs" parent="menu_jobs" action="act_administrator_job_view"/>
+	    
+</data>
+</openerp>

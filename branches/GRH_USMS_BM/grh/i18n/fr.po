@@ -1,0 +1,711 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* grh
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131228-002427\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-13 18:21+0000\n"
+"PO-Revision-Date: 2014-03-13 20:56-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.6.4\n"
+
+#. module: grh
+#: field:grh.administrator,service_id:0 field:grh.professor,service_id:0
+#: view:grh.service:0
+msgid "Service"
+msgstr "Service"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_administrator_diploma
+msgid "grh.administrator.diploma"
+msgstr "grh.administrator.diploma"
+
+#. module: grh
+#: model:ir.ui.menu,name:grh.menu_human_resources
+msgid "Human Resources"
+msgstr "Ressources Humaines"
+
+#. module: grh
+#: field:grh.administrator,name_ar:0 field:grh.professor,name_ar:0
+#: field:grh.temporary,name_ar:0
+msgid "Arabic name"
+msgstr "Nom en arabe"
+
+#. module: grh
+#: field:grh.administrator,department_id:0 view:grh.department:0
+#: field:grh.professor,department_id:0 field:grh.service,department_id:0
+msgid "Department"
+msgstr "Département"
+
+#. module: grh
+#: field:grh.professor,next_prop_date:0
+msgid "Date of Next proposal"
+msgstr "Date of Next proposal"
+
+#. module: grh
+#: view:grh.professor.job:0 model:ir.ui.menu,name:grh.menu_professor_jobs
+msgid "Professor jobs"
+msgstr "Postes de professeur"
+
+#. module: grh
+#: field:grh.department,name:0 field:grh.service,name:0
+msgid "Nom"
+msgstr "Nom"
+
+#. module: grh
+#: field:grh.administrator,job_ids:0 field:grh.professor,job_ids:0
+#: model:ir.actions.act_window,name:grh.act_administrator_job_view
+#: model:ir.actions.act_window,name:grh.act_professor_job_view
+#: model:ir.ui.menu,name:grh.menu_jobs
+msgid "Jobs"
+msgstr "Postes"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.department:0 view:grh.professor:0
+#: view:grh.service:0 view:grh.temporary:0
+msgid "Other Information ..."
+msgstr "Autres Informations ..."
+
+#. module: grh
+#: model:ir.actions.report.xml,name:grh.admin_administrative_certification
+#: model:ir.actions.report.xml,name:grh.prof_administrative_certification
+msgid "Administrative certification"
+msgstr "Administrative certification"
+
+#. module: grh
+#: model:ir.actions.act_window,name:grh.act_service_view
+#: model:ir.ui.menu,name:grh.menu_services
+msgid "Services"
+msgstr "Services"
+
+#. module: grh
+#: field:grh.department,secretary_id:0
+msgid "Secretary"
+msgstr "Secrétaire"
+
+#. module: grh
+#: field:grh.administrator,complete_name:0 field:grh.professor,complete_name:0
+msgid "Full name"
+msgstr "Full name"
+
+#. module: grh
+#: model:ir.actions.act_window,name:grh.act_temporary_view
+#: model:ir.ui.menu,name:grh.menu_temporarys
+msgid "Temporarys"
+msgstr "Vacataires"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_professor
+msgid "grh.professor"
+msgstr "grh.professor"
+
+#. module: grh
+#: field:grh.administrator,lastname:0 field:grh.professor,lastname:0
+#: field:grh.temporary,lastname:0
+msgid "Last name"
+msgstr "Prénom"
+
+#. module: grh
+#: field:grh.administrator,notes:0 field:grh.department,notes:0
+#: field:grh.professor,notes:0 field:grh.service,notes:0
+#: field:grh.temporary,notes:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: grh
+#: selection:grh.administrator,marital:0 selection:grh.professor,marital:0
+msgid "Married"
+msgstr "Marrié"
+
+#. module: grh
+#: view:grh.administrator:0 field:grh.administrator.job,current_state:0
+#: view:grh.professor:0 field:grh.professor.job,current_state:0
+msgid "Current state"
+msgstr "Etat actuel"
+
+#. module: grh
+#: field:grh.administrator,lastname_ar:0 field:grh.professor,lastname_ar:0
+#: field:grh.temporary,lastname_ar:0
+msgid "Arabic last name"
+msgstr "Prénom en arabe"
+
+#. module: grh
+#: field:grh.administrator,scale_prop:0 field:grh.professor,scale_prop:0
+msgid "Proposal scale"
+msgstr "Echelle proposée"
+
+#. module: grh
+#: field:grh.administrator,job_prop:0 field:grh.professor,job_prop:0
+msgid "Proposal job "
+msgstr "Poste proposé"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_professor_poste
+msgid "grh.professor.poste"
+msgstr "grh.professor.poste"
+
+#. module: grh
+#: field:grh.administrator,echelon:0 field:grh.administrator.job,echelon:0
+#: field:grh.professor,echelon:0 field:grh.professor.job,echelon:0
+msgid "Echelon"
+msgstr "Echelon"
+
+#. module: grh
+#: selection:grh.administrator,gender:0 selection:grh.professor,gender:0
+#: selection:grh.temporary,gender:0
+msgid "Female"
+msgstr "Féminin"
+
+#. module: grh
+#: model:ir.actions.act_window,help:grh.act_administrator_diploma_view
+#: model:ir.actions.act_window,help:grh.act_administrator_job_view
+#: model:ir.actions.act_window,help:grh.act_department_view
+#: model:ir.actions.act_window,help:grh.act_professor_diploma_view
+#: model:ir.actions.act_window,help:grh.act_professor_job_view
+#: model:ir.actions.act_window,help:grh.act_professor_view
+msgid "<p class=\"oe_view_nocontent_create\">Click to define a new record.</p>"
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">Cliquez pour ajouter un nouveau "
+"enregistrement.</p>"
+
+#. module: grh
+#: field:grh.administrator,scale:0 field:grh.administrator.job,scale:0
+#: field:grh.professor,scale:0 field:grh.professor.job,scale:0
+msgid "Scale"
+msgstr "Echelle"
+
+#. module: grh
+#: view:grh.administrator:0
+msgid "Attendees"
+msgstr "Attendees"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0
+msgid "General Informations"
+msgstr "Informations Generales"
+
+#. module: grh
+#: model:ir.actions.report.xml,name:grh.admin_list
+msgid "List of Administrators"
+msgstr "Liste des administrateurs"
+
+#. module: grh
+#: field:grh.administrator,category_prop:0 field:grh.professor,category_prop:0
+msgid "Proposal category"
+msgstr "Catégorie proposée"
+
+#. module: grh
+#: field:grh.administrator,doti:0 field:grh.professor,doti:0
+msgid "S.O.M"
+msgstr "S.O.M"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0 view:grh.temporary:0
+msgid "Vital"
+msgstr "Etat civil"
+
+#. module: grh
+#: field:grh.administrator,passport:0 field:grh.professor,passport:0
+#: field:grh.temporary,passport:0
+msgid "Passport"
+msgstr "Passeport"
+
+#. module: grh
+#: view:grh.professor.report.wizard:0
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: grh
+#: model:ir.ui.menu,name:grh.menu_structures
+msgid "Structures"
+msgstr "Structures"
+
+#. module: grh
+#: field:grh.administrator,email:0 field:grh.temporary,email:0
+msgid "Email"
+msgstr "E-mail"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0
+msgid "Proposed state"
+msgstr "Etat proposé "
+
+#. module: grh
+#: field:grh.administrator,marital:0 field:grh.professor,marital:0
+msgid "Marital Status"
+msgstr "Situation familliale"
+
+#. module: grh
+#: report:grh.administrator.admin_list:0 report:grh.professor.prof_list:0
+msgid "Nom complet"
+msgstr "Nom complet"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0
+msgid "professional informations"
+msgstr "Informations professionnelles"
+
+#. module: grh
+#: field:grh.administrator.poste,administrator_ids:0 view:grh.department:0
+#: field:grh.department,administrator_ids:0 view:grh.service:0
+#: field:grh.service,administrator_ids:0
+#: model:ir.actions.act_window,name:grh.act_administrator_view
+#: model:ir.ui.menu,name:grh.menu_administrators
+msgid "Administrators"
+msgstr "Administrateurs"
+
+#. module: grh
+#: field:grh.administrator,job:0 field:grh.administrator.job,job:0
+#: field:grh.professor,job:0 field:grh.professor.job,job:0
+msgid "Job"
+msgstr "Poste"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_department
+msgid "grh.department"
+msgstr "grh.department"
+
+#. module: grh
+#: field:grh.department,administrator_count:0
+#: field:grh.service,administrator_count:0
+msgid "Administrators count"
+msgstr "Nombre des administrateurs"
+
+#. module: grh
+#: model:ir.ui.menu,name:grh.menu_professor_qualifications
+msgid "Professor Studies"
+msgstr "Etudes de professeur"
+
+#. module: grh
+#: report:grh.administrator.admin_administrative_certification:0
+#: report:grh.professor.prof_administrative_certification:0
+msgid "Attestation administrative"
+msgstr "Attestation administrative"
+
+#. module: grh
+#: selection:grh.administrator,marital:0 selection:grh.professor,marital:0
+msgid "Divorced"
+msgstr "Divorcé"
+
+#. module: grh
+#: field:grh.administrator,city:0 field:grh.temporary,city:0
+msgid "city"
+msgstr "Ville"
+
+#. module: grh
+#: view:grh.professor:0 field:grh.professor.diploma,professor_id:0
+#: field:grh.professor.job,professor_id:0
+#: field:grh.professor.report.wizard,professor_id:0
+msgid "Professor"
+msgstr "Enseignant"
+
+#. module: grh
+#: model:ir.actions.act_window,name:grh.act_department_view
+#: model:ir.ui.menu,name:grh.menu_departments
+msgid "Departments"
+msgstr "Départements"
+
+#. module: grh
+#: field:grh.administrator,office_localisation:0
+#: field:grh.professor,office_localisation:0
+msgid "Office localisation"
+msgstr "Bureau"
+
+#. module: grh
+#: field:grh.professor.report.wizard,reason:0
+msgid "reason"
+msgstr "reason"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0 view:grh.temporary:0
+msgid "Contact"
+msgstr "Coordonnées personnelles"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_professor_diploma
+msgid "grh.professor.diploma"
+msgstr "grh.professor.diploma"
+
+#. module: grh
+#: report:grh.administrator.admin_list:0 report:grh.professor.prof_list:0
+msgid "Signature"
+msgstr "Signature"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_professor_report_wizard
+msgid "grh.professor.report.wizard"
+msgstr "grh.professor.report.wizard"
+
+#. module: grh
+#: selection:grh.administrator,gender:0 selection:grh.professor,gender:0
+#: selection:grh.temporary,gender:0
+msgid "Male"
+msgstr "Masculin"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0
+#: model:ir.actions.act_window,name:grh.act_administrator_diploma_view
+#: model:ir.actions.act_window,name:grh.act_professor_diploma_view
+#: model:ir.ui.menu,name:grh.menu_qualifications
+msgid "Studies"
+msgstr "Etudes"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0 view:grh.temporary:0
+msgid ""
+"$('.oe_employee_picture').load(function() { if($(this).width() > $(this)."
+"height()) { $(this).addClass('oe_employee_picture_wide') } });"
+msgstr ""
+"$('.oe_employee_picture').load(function() { if($(this).width() > $(this)."
+"height()) { $(this).addClass('oe_employee_picture_wide') } });"
+
+#. module: grh
+#: model:ir.ui.menu,name:grh.menu_GRH
+msgid "GRH"
+msgstr "Ressources Humaines"
+
+#. module: grh
+#: field:grh.administrator,grade:0 report:grh.administrator.admin_list:0
+#: field:grh.administrator.job,grade:0 field:grh.professor,grade:0
+#: field:grh.professor.job,grade:0 report:grh.professor.prof_list:0
+msgid "Grade"
+msgstr "Grade"
+
+#. module: grh
+#: field:grh.administrator,photo:0 field:grh.professor,photo:0
+#: field:grh.temporary,photo:0
+msgid "Photo"
+msgstr "Photo"
+
+#. module: grh
+#: field:grh.administrator.diploma,graduation_date:0
+#: field:grh.professor.diploma,graduation_date:0
+msgid "Date of graduation"
+msgstr "Date d'obtention du diplôme"
+
+#. module: grh
+#: field:grh.administrator,work_fleet:0 field:grh.professor,work_fleet:0
+msgid "Work phone"
+msgstr "Flotte"
+
+#. module: grh
+#: field:grh.administrator,office_station:0
+#: field:grh.professor,office_station:0
+msgid "Number of station"
+msgstr "Numéro du poste"
+
+#. module: grh
+#: field:grh.administrator,next_prop_date:0
+msgid "Date of next proposal"
+msgstr "Date of next proposal"
+
+#. module: grh
+#: field:grh.professor,category:0 field:grh.professor.job,category:0
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: grh
+#: field:grh.administrator.diploma,support:0
+#: field:grh.administrator.job,support:0 field:grh.professor.diploma,support:0
+#: field:grh.professor.job,support:0
+msgid "Support"
+msgstr "Support"
+
+#. module: grh
+#: field:grh.professor.report.wizard,address:0
+msgid "address"
+msgstr "address"
+
+#. module: grh
+#: field:grh.administrator,num_children:0 field:grh.professor,num_children:0
+msgid "Number of children"
+msgstr "Nombre d'enfants"
+
+#. module: grh
+#: field:grh.administrator,scale_effect_date:0
+#: field:grh.administrator.job,scale_effect_date:0
+#: field:grh.professor,scale_effect_date:0
+#: field:grh.professor.job,echelon_effect_date:0
+#: field:grh.professor.job,scale_effect_date:0
+msgid "Date of scale effect"
+msgstr "Date d'effet d'échelle"
+
+#. module: grh
+#: field:grh.department,professor_count:0 field:grh.service,professor_count:0
+msgid "Professors count"
+msgstr "Nombre d'enseignants"
+
+#. module: grh
+#: field:grh.department,leader_id:0
+msgid "Leader"
+msgstr "Chef"
+
+#. module: grh
+#: field:grh.administrator,echelon_effect_date:0
+#: field:grh.administrator.job,echelon_effect_date:0
+#: field:grh.professor,echelon_effect_date:0
+msgid "Date of echelon effect"
+msgstr "Date d'effet d'échelon"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_administrator_job
+msgid "grh.administrator.job"
+msgstr "grh.administrator.job"
+
+#. module: grh
+#: view:grh.professor.report.wizard:0
+msgid "Print Certification of quittement territory"
+msgstr "Print Certification of quittement territory"
+
+#. module: grh
+#: field:grh.department,logo:0
+msgid "Logo of department"
+msgstr "Logo de département"
+
+#. module: grh
+#: field:grh.administrator,birthday:0 field:grh.professor,birthday:0
+#: field:grh.temporary,birthday:0
+msgid "Birthday"
+msgstr "Date de naissance"
+
+#. module: grh
+#: field:grh.administrator,grade_prop:0 field:grh.professor,grade_prop:0
+msgid "Proposal grade"
+msgstr "Proposal grade"
+
+#. module: grh
+#: report:grh.administrator.admin_list:0
+msgid "Liste des administrateurs"
+msgstr "Liste des administrateurs"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_temporary
+msgid "grh.temporary"
+msgstr "grh.temporary"
+
+#. module: grh
+#: field:grh.professor,name:0
+msgid "Professor name"
+msgstr "Nom d'enseignant"
+
+#. module: grh
+#: report:grh.professor.prof_list:0
+msgid "Liste des enseignants"
+msgstr "Liste des enseignants"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_professor_job
+msgid "grh.professor.job"
+msgstr "grh.professor.job"
+
+#. module: grh
+#: field:grh.administrator,pb:0 field:grh.professor,pb:0
+msgid "Budget item"
+msgstr "Poste budgétaire"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0
+msgid "History"
+msgstr "Historique des avancements"
+
+#. module: grh
+#: view:grh.temporary:0
+msgid "Informations"
+msgstr "Informations"
+
+#. module: grh
+#: view:grh.professor.report.wizard:0
+msgid "Are you sure you want to print?"
+msgstr "Etes-vous sûr que vous voulez imprimer?"
+
+#. module: grh
+#: view:grh.administrator.diploma:0 view:grh.administrator.job:0
+#: model:ir.ui.menu,name:grh.menu_administrator_jobs
+msgid "Administrator jobs"
+msgstr "Postes d'administrateur"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.department:0
+#: field:grh.department,professor_ids:0 view:grh.professor:0
+#: field:grh.professor.poste,professor_ids:0 view:grh.service:0
+#: field:grh.service,professor_ids:0 view:grh.temporary:0
+#: model:ir.actions.act_window,name:grh.act_professor_view
+#: model:ir.ui.menu,name:grh.menu_professors
+msgid "Professors"
+msgstr "Enseignants"
+
+#. module: grh
+#: view:grh.professor.report.wizard:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: grh
+#: field:grh.administrator.diploma,city:0 field:grh.professor,city:0
+#: field:grh.professor.diploma,city:0
+msgid "City"
+msgstr "Ville"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0
+msgid "Work contact"
+msgstr "Contacte de travail"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_administrator_poste
+msgid "grh.administrator.poste"
+msgstr "grh.administrator.poste"
+
+#. module: grh
+#: model:ir.ui.menu,name:grh.menu_administrator_qualifications
+msgid "Administrator Studies"
+msgstr "Études d'administrateur"
+
+#. module: grh
+#: field:grh.service,responsible_id:0
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: grh
+#: field:grh.administrator,cin:0 field:grh.professor,cin:0
+#: field:grh.temporary,cin:0
+msgid "CIN"
+msgstr "CIN"
+
+#. module: grh
+#: field:grh.administrator,recruitment_date:0
+#: field:grh.professor,recruitment_date:0
+msgid "Date of recruitment"
+msgstr "Date de recrutement"
+
+#. module: grh
+#: field:grh.professor,email:0
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: grh
+#: field:grh.administrator,adress:0 field:grh.professor,adress:0
+#: field:grh.temporary,adress:0
+msgid "Adress"
+msgstr "Adresse"
+
+#. module: grh
+#: view:grh.administrator:0 field:grh.administrator.diploma,administrator_id:0
+#: field:grh.administrator.job,administrator_id:0
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: grh
+#: view:grh.temporary:0
+msgid "Temporary"
+msgstr "Vacataire"
+
+#. module: grh
+#: field:grh.administrator.diploma,establishment:0
+#: field:grh.professor.diploma,establishment:0
+msgid "Establishment"
+msgstr "Etablissement"
+
+#. module: grh
+#: field:grh.administrator,phone:0 field:grh.professor,phone:0
+#: field:grh.temporary,phone:0
+msgid "Phone number"
+msgstr "Téléphone"
+
+#. module: grh
+#: field:grh.administrator,studies_ids:0
+#: field:grh.administrator.diploma,diploma:0 field:grh.professor,studies_ids:0
+#: field:grh.professor.diploma,diploma:0
+msgid "Diploma"
+msgstr "Diplômes"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_service
+msgid "grh.service"
+msgstr "grh.service"
+
+#. module: grh
+#: field:grh.administrator,echelon_prop:0 field:grh.professor,echelon_prop:0
+msgid "Proposal echelon"
+msgstr "Echelon proposé"
+
+#. module: grh
+#: field:grh.administrator,work_email:0 field:grh.professor,work_email:0
+msgid "Work e-mail"
+msgstr "E-mail professionnel"
+
+#. module: grh
+#: field:grh.administrator,name:0 field:grh.administrator.poste,name:0
+#: field:grh.professor.poste,name:0 field:grh.temporary,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: grh
+#: view:grh.professor.diploma:0
+msgid "Professor diploma"
+msgstr "Diplômes d'enseignants"
+
+#. module: grh
+#: field:grh.administrator,gender:0 field:grh.professor,gender:0
+#: field:grh.temporary,gender:0
+msgid "Gender"
+msgstr "Sexe"
+
+#. module: grh
+#: view:grh.administrator:0 view:grh.professor:0 view:grh.temporary:0
+msgid "Tel:"
+msgstr "Tel:"
+
+#. module: grh
+#: field:grh.administrator,birth_place:0 field:grh.professor,birth_place:0
+#: field:grh.temporary,birth_place:0
+msgid "Place of birth"
+msgstr "Lieu de naissance"
+
+#. module: grh
+#: report:grh.administrator.admin_administrative_certification:0
+#: report:grh.professor.prof_administrative_certification:0
+msgid "celle-ci une template pour une attestation administrative pour Mr."
+msgstr "celle-ci une template pour une attestation administrative pour Mr."
+
+#. module: grh
+#: selection:grh.administrator,marital:0 selection:grh.professor,marital:0
+msgid "Single"
+msgstr "Célibataire"
+
+#. module: grh
+#: selection:grh.administrator,marital:0 selection:grh.professor,marital:0
+msgid "Widower"
+msgstr "Veuf"
+
+#. module: grh
+#: model:ir.actions.act_window,name:grh.act_reports_print
+msgid "Print report"
+msgstr "Print report"
+
+#. module: grh
+#: model:ir.model,name:grh.model_grh_administrator
+msgid "grh.administrator"
+msgstr "grh.administrator"
+
+#. module: grh
+#: model:ir.actions.report.xml,name:grh.prof_list
+msgid "List of Professors"
+msgstr "List of Professors"
+
+#. module: grh
+#: model:ir.actions.act_window,help:grh.act_administrator_view
+#: model:ir.actions.act_window,help:grh.act_service_view
+#: model:ir.actions.act_window,help:grh.act_temporary_view
+msgid ""
+"<p class=\"oe_view_nocontent_create\"> Click to define a new record.</p>"
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">Cliquez pour ajouter un nouveau "
+"enregistrement.</p>"

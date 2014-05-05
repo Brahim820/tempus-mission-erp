@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+
+	<record model="ir.ui.view" id="view_professor_form">
+			<field name="name">grh.professor.form</field>
+			<field name="model">grh.professor</field>
+			<field name="arch" type="xml">
+				<form string="Professor" version="7.0">
+				<sheet>
+					<field name="image_medium" widget='image' class="oe_left oe_avatar"/>
+					<div class="oe_title">
+						<h2>
+							<label for="name" class="oe_edit_only"/><field name="name"/> <label for="lastname" class="oe_edit_only"/><field name="lastname"/> 
+						</h2>
+						
+					</div>
+					<notebook>
+						<page string="General Informations">
+							<group>
+								<group string="Vital" >
+									<field name="name_ar"/>
+									<field name="lastname_ar"/>
+									<field name="gender"/>
+									<field name="birthday" />
+									<field name="birth_place" />
+									<field name="marital"/>
+									<field name="num_children"/>
+								</group>
+								<group string="Contact">
+									<field name="cin"/>
+									<field name="passport"/>
+									<field name="adress"/>
+									<field name="city" />
+									<field name="phone" />
+									<field name="email" widget="email"/>
+								</group>
+								<group string="Work contact">
+									<field name="department_id"/>
+									<field name="service_id"/>
+									<field name="office_localisation"/>
+									<field name="office_station" />
+									<field name="work_fleet" />
+									<field name="work_email" widget="email"/>
+								</group>
+						</group>
+						</page>
+						<page string="professional informations">
+							<group>
+								<field name="doti" />
+								<field name="pb" />
+								<field name="recruitment_date" />
+							</group>
+							<group string="Current state">
+								<group>
+									<field name="job" />
+									<field name="grade" />
+									<field name="category"/>
+								</group>
+								<group>
+									<field name="scale" />
+									<field name="scale_effect_date" />
+								</group>
+								<group>
+									<field name="echelon" />
+									<field name="echelon_effect_date" />
+								</group>
+							</group>
+							<group string="Proposed state">
+								<group>
+									<field name="job_prop" />
+									<field name="grade_prop" />
+								</group>
+								<group>
+									<field name="scale_prop" />
+									<field name="echelon_prop" />
+								</group>
+								<group>
+									<field name="next_prop_date" />
+								</group>
+							</group>
+							<group string="History">
+								<field name="job_ids" colspan="4" nolabel="1"/>
+							</group>
+						</page>
+						<page string="Studies">
+							<field name="studies_ids" colspan="4" nolabel="1"/>
+						</page>
+					</notebook>
+					<field name="notes" placeholder="Other Information ..." colspan="4"/>
+				</sheet>
+			</form>
+		</field>
+	</record> 
+	<record model="ir.ui.view" id="view_professor_tree">
+		<field name="name">grh.professor.tree</field>
+		<field name="model">grh.professor</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Professors" >
+				<field name="name"/>
+				<field name="lastname"/>
+				<field name="doti"/>
+				<field name="email"/>
+			</tree>
+		</field>
+	</record>
+	<record model="ir.ui.view" id="view_professor_kanban">
+		<field name="name">grh.professor.kanban</field>
+		<field name="model">grh.professor</field>
+		<field name="arch" type="xml">
+			<kanban>
+				<templates>
+					<t t-name="kanban-box">
+						<div class="oe_grh_vignette">
+							<div class="oe_grh_image">
+								<a type="open"><img t-att-src="kanban_image('grh.professor', 'image_medium', record.id.value)" class="oe_grh_picture"/></a>
+							</div>
+							<div class="oe_grh_details">
+								<h4>
+									<a type="open">
+										<field name="name"/>
+										<field name="lastname"/>
+										<t t-if="record.name.raw_value"></t>
+									</a>
+								</h4>
+								<ul>
+									<li t-if="record.phone.raw_value"><field name="phone"/></li>
+								</ul>
+							</div>
+						</div>
+						<script>
+						$('.oe_grh_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_grh_picture_wide') } });
+						</script>
+					</t>
+				</templates>
+			</kanban>
+
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="act_professor_view">
+		<field name="name">Professors</field>
+		<field name="res_model">grh.professor</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">kanban,tree,form</field>
+		<field name="help" type="html"><p class="oe_view_nocontent_create">Click to define a new record.</p></field>
+				
+	</record>
+	
+	<menuitem name="GRH" id="menu_GRH" />
+	<menuitem name="Human Resources" id="menu_human_resources" parent="menu_GRH"/>
+	<menuitem name="Professors" id="menu_professors" parent="menu_human_resources" action="act_professor_view"/>
+
+</data>
+</openerp>

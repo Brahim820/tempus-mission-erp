@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+	<record id="view_temporary_form" model="ir.ui.view">
+            <field name="name">grh.temporary.form</field>
+            <field name="model">grh.temporary</field>
+            <field name="arch" type="xml">
+                <form string="Temporary" version="7.0">
+				<sheet>
+					<field name="photo" widget='image' class="oe_left oe_avatar"/>
+					<div class="oe_title">
+						<h1>
+							<label for="name" class="oe_edit_only"/><field name="name"/> <label for="lastname" class="oe_edit_only"/><field name="lastname"/> 
+						</h1>
+						
+					</div>
+					<notebook>
+						<page string="Informations">
+							<group>
+								<group string="Vital" >
+									<field name="name_ar"/>
+									<field name="lastname_ar"/>
+									<field name="gender"/>
+									<field name="birthday" />
+									<field name="birth_place" />
+								</group>
+								<group string="Contact">
+									<field name="cin"/>
+									<field name="passport"/>
+									<field name="adress"/>
+									<field name="city" />
+									<field name="phone" />
+									<field name="email" widget="email"/>
+								</group>
+							</group>
+							 <field name="notes" placeholder="Other Information ..." colspan="4"/>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+        </field>
+    </record> 
+    <record model="ir.ui.view" id="view_temporary_tree">
+        <field name="name">grh.temporary.tree</field>
+        <field name="model">grh.temporary</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Professors" >
+				<field name="name"/>
+				<field name="lastname"/>
+				<field name="email"/>
+			</tree>
+        </field>
+    </record>
+	<record model="ir.ui.view" id="view_temporary_kanban">
+        <field name="name">grh.temporary.kanban</field>
+        <field name="model">grh.temporary</field>
+        <field name="arch" type="xml">
+            <kanban>
+				<templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_grh_vignette">
+                            <div class="oe_grh_image">
+                                <a type="open"><img t-att-src="kanban_image('grh.temporary', 'photo', record.id.value)" class="oe_grh_picture"/></a>
+                            </div>
+                            <div class="oe_grh_details">
+                                <h4>
+                                    <a type="open">
+										<field name="name"/>
+										<field name="lastname"/>
+										<t t-if="record.name.raw_value"></t>
+									</a>
+                                </h4>
+                                <ul>
+                                    <li t-if="record.phone.raw_value">Tel: <field name="phone"/></li>
+                                    <li t-if="record.email.raw_value"><a t-attf-href="mailto:#{record.email.value}"><field name="email"/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                        $('.oe_grh_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_grh_picture_wide') } });
+                        </script>
+                    </t>
+                </templates>
+            </kanban>
+
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="act_temporary_view">
+        <field name="name">Temporarys</field>
+        <field name="res_model">grh.temporary</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+		<field name="help" type="html"><p class="oe_view_nocontent_create"> Click to define a new record.</p></field>
+				
+    </record>
+    
+	<menuitem name="GRH" id="menu_GRH" />
+	<menuitem name="Human Resources" id="menu_human_resources" parent="menu_GRH"/>
+	<menuitem name="Temporarys" id="menu_temporarys" parent="menu_human_resources" action="act_temporary_view"/>
+
+        
+</data>
+</openerp>

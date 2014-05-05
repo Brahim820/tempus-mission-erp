@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+	<!-- Administrators reports -->
+    	<report 
+		id="admin_administrative_certification" 
+		model="grh.administrator"  
+		name="grh.administrator.admin_administrative_certification" 
+		rml="grh/reports/admin_administrative_certification.xml" 
+		string="Administrative certification"/>
+		
+    	<report 
+		id="admin_list" 
+		model="grh.administrator"  
+		name="grh.administrator.admin_list" 
+		rml="grh/reports/admin_list.xml" 
+		string="List of Administrators"/>
+    	
+	<!-- Professors reports -->
+    	<report 
+		id="prof_administrative_certification" 
+		model="grh.professor"  
+		name="grh.professor.prof_administrative_certification" 
+		rml="grh/reports/prof_administrative_certification.xml" 
+		string="Administrative certification" />
+		
+		<report 
+		id="prof_administrative_certification_ar" 
+		model="grh.professor"  
+		name="grh.professor.prof_administrative_certification_ar" 
+		rml="grh/reports/prof_administrative_certification_ar.xml" 
+		string=" Arabic Administrative Certification" />
+		
+    	<report 
+		id="prof_list" 
+		model="grh.professor"  
+		name="grh.professor.prof_list" 
+		rml="grh/reports/prof_list.xml" 
+		string="List of Professors" />
+		
+		<!-- <report 
+		id="prof_certification_quittement_territory" 
+		model="grh.professor"  
+		name="grh.professor.prof_certification_quittement_territory" 
+		rml="grh/reports/prof_certification_quittement_territory.xml" 
+		string="test"/> -->
+    	
+		
+		<!--<report id="report_webkit" model="grh.administrator" name="grh.administrator.report_test" file="grh/reports/test.html" string="test Webkit" report_type="webkit"/>-->
+    </data>
+</openerp>

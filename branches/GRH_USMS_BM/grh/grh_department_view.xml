@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_department_form" model="ir.ui.view">
+            <field name="name">grh.department.form</field>
+            <field name="model">grh.department</field>
+            <field name="arch" type="xml">
+                <form string="Department" version="7.0">
+					<sheet>
+						<field name="logo" widget='image' class="oe_left oe_avatar"/>
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only"/>
+							<h2>
+								<field name="name"/>
+							</h2>
+							<group>	
+								<field name="leader_id"/>
+								<field name="secretary_id"  />
+								<field name="professor_count"  />
+								<field name="administrator_count"   />
+							</group>
+						</div>
+						<notebook>
+							<page string="Professors">
+								<field name="professor_ids" widget="many2many_kanban"/>
+							</page>
+							<page string="Administrators">
+								<field name="administrator_ids" widget="many2many_kanban"/>
+							</page>
+							<field name="notes" placeholder="Other Information ..." colspan="4"/>
+						</notebook>
+					</sheet>
+				</form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_department_tree">
+        <field name="name">grh.department.tree</field>
+        <field name="model">grh.department</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Department" >
+				<field name="name"/>
+				<field name="leader_id"/>
+				<field name="secretary_id"/>
+				</tree>
+        </field>
+    </record>
+	<record model="ir.actions.act_window" id="act_department_view">
+        <field name="name">Departments</field>
+        <field name="res_model">grh.department</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+		<field name="help" type="html"><p class="oe_view_nocontent_create">Click to define a new record.</p></field>
+    </record>
+	
+	<record id="view_service_form" model="ir.ui.view">
+            <field name="name">grh.service.form</field>
+            <field name="model">grh.service</field>
+            <field name="arch" type="xml">
+                <form string="Service" version="7.0">
+				<sheet>
+					<div class="oe_title">
+						<label for="name" class="oe_edit_only"/>
+						<h1>
+							<field name="name"/>
+						</h1>
+						<group>
+							<field name="responsible_id"  />
+							<field name="department_id"  />
+							<field name="professor_count"  />
+							<field name="professor_count"   />
+						</group>
+					</div>
+					<notebook>
+						<page string="Professors">
+							<field name="professor_ids" widget="many2many_kanban"/>
+						</page>
+						<page string="Administrators">
+							<field name="administrator_ids" widget="many2many_kanban"/>
+						</page>
+						<field name="notes" placeholder="Other Information ..." colspan="4"/>
+					</notebook>
+				</sheet>
+			</form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_service_tree">
+        <field name="name">grh.service.tree</field>
+        <field name="model">grh.service</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Service" >
+				<field name="name"/>
+				<field name="responsible_id"/>
+				<field name="department_id"/>
+				</tree>
+        </field>
+    </record>
+	<record model="ir.actions.act_window" id="act_service_view">
+        <field name="name">Services</field>
+        <field name="res_model">grh.service</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+		<field name="help" type="html"><p class="oe_view_nocontent_create"> Click to define a new record.</p></field>
+    </record>
+	
+	<menuitem name="Structures" id="menu_structures" parent="menu_human_resources" />
+    <menuitem name="Departments" id="menu_departments" parent="menu_structures" action="act_department_view"/>
+	<menuitem name="Services" id="menu_services" parent="menu_structures" action="act_service_view"/>
+	    
+</data>
+</openerp>
