@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="ptr_establissement_kanban_view">
+		<field name="name">ptr.establissement.kanban</field>
+		<field name="model">ptr.establissement</field>
+		<field name="arch" type="xml">
+			<kanban>
+				<templates>
+					<t t-name="kanban-box">
+						<div class="oe_establissement_vignette">
+							<div class="oe_establissement_image">
+								<a type="open"><img t-att-src="kanban_image('ptr.establissement', 'image_medium', record.id.value)" class="oe_establissement_picture"/></a>
+							</div>
+							<div class="oe_establissement_details">
+								<h4>
+									<a type="open">
+										<field name="name"/>
+										<!-- <t t-if="record.name.raw_value"></t> -->
+									</a>
+								</h4>
+								<ul>
+									Code:<field name="code"/>
+									<!-- <li t-if="record.phone.raw_value">Tel: <field name="phone"/></li>
+									<li t-if="record.email.raw_value"><a t-attf-href="mailto:#{record.email.value}"><field name="email"/></a></li> -->
+								</ul>
+							</div>
+						</div>
+						<script>
+						$('.oe_establissement_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_establissement_picture_wide') } });
+						</script>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+        <record id="ptr_establissement_form_view" model="ir.ui.view">
+            <field name="name">ptr.establissement.form</field>
+            <field name="model">ptr.establissement</field>
+            <field name="arch" type="xml">
+                <form string="Establissement" version="7.0">
+					<sheet>
+						<field name="image_medium" widget="image" class="oe_left oe_avatar" />
+						<div class="oe_title">
+							<h2> 
+								<label for="name" class="oe_edit_only" />
+								<field name="name"/> 
+							</h2>
+						</div>
+						<notebook >
+							<page string="Informations">
+								<group>
+									<field name="code"/>
+								</group>
+							</page>
+							<page string="Locals">
+									<field name="local_ids" no-label="1"/>
+							</page>
+						</notebook>
+                        <field name="note"/> 
+					</sheet>     
+                </form>
+            </field>
+        </record>
+		<record id="ptr_establissement_tree_view" model="ir.ui.view">
+            <field name="name">ptr.establissement.tree</field>
+            <field name="model">ptr.establissement</field>
+            <field name="arch" type="xml">
+                <tree string="Establissement" version="7.0">
+                    <field name="name"/> 
+					<field name="code" widget="progressbar"/>     					
+                </tree>
+            </field>
+        </record>
+		<record id="ptr_establissement_act_view" model="ir.actions.act_window">
+            <field name="name">Establissement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ptr.establissement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+			<field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new record.
+              </p>
+            </field>
+        </record>
+		
+        <menuitem id="ptr_main_menu" name="Patrimoin Management" />
+        <menuitem id="ptr_establissement_management_menu" name="Establissement Management" parent="ptr_main_menu" />
+        <menuitem id="ptr_establissement_menu" name="Establissement" parent="ptr_establissement_management_menu" action="ptr_establissement_act_view" />
+		
+	</data>
+</openerp>

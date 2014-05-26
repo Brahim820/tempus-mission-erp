@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <!--Equipement -->
+	   <record model="ir.ui.view" id="ptr_equipement_kanban_view">
+		<field name="name">ptr.equipement.kanban</field>
+		<field name="model">ptr.equipement</field>
+		<field name="arch" type="xml">
+			<kanban>
+				<templates>
+					<t t-name="kanban-box">
+						<div class="oe_establissement_vignette">
+							<div class="oe_establissement_image">
+								<a type="open"><img t-att-src="kanban_image('ptr.equipement', 'image_medium', record.id.value)" class="oe_establissement_picture"/></a>
+							</div>
+							<div class="oe_establissement_details">
+								<h4>
+									<a type="open">
+										<field name="name"/>
+										<!-- <t t-if="record.name.raw_value"></t> -->
+									</a>
+								</h4>
+								<ul>
+									Code:<field name="code"/>
+									<!-- <li t-if="record.phone.raw_value">Tel: <field name="phone"/></li>
+									<li t-if="record.email.raw_value"><a t-attf-href="mailto:#{record.email.value}"><field name="email"/></a></li> -->
+								</ul>
+							</div>
+						</div>
+						<script>
+						$('.oe_establissement_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_establissement_picture_wide') } });
+						</script>
+					</t>
+				</templates>
+			</kanban>
+
+		</field>
+	</record>
+		<record id="ptr_equipement_form_view" model="ir.ui.view">
+            <field name="name">ptr.equipement.form</field>
+            <field name="model">ptr.equipement</field>
+            <field name="arch" type="xml">
+                <form string="Equipement" version="7.0">
+					<sheet>
+						<field name="image" widget="image" class="oe_left oe_avatar" />
+						<div class="oe_title">
+							<h2> 
+								<label for="name" class="oe_edit_only" />
+								<field name="name"/> 
+							</h2>
+							<field name="code"/>
+						</div>
+						<notebook >
+							<page string="Informations">
+								<group>
+									<field name="category_id"/>
+								</group>
+							</page>
+						</notebook>
+                        <field name="note"/> 
+					</sheet>     
+                </form>
+            </field>
+        </record>
+		<record id="ptr_equipement_tree_view" model="ir.ui.view">
+            <field name="name">ptr.equipement.tree</field>
+            <field name="model">ptr.equipement</field>
+            <field name="arch" type="xml">
+                <tree string="Equipement" version="7.0">
+                    <field name="name"/> 
+					<field name="code" /> 
+					<field name="category_id"/>
+				</tree>
+            </field>
+        </record>
+		
+ 	<!--Codes -->
+		<record id="ptr_equipement_code_form_view" model="ir.ui.view">
+            <field name="name">ptr.equipement.code.form</field>
+            <field name="model">ptr.equipement.code</field>
+            <field name="arch" type="xml">
+                <form string="Codes"  version="7.0">
+                   <field name="code" />
+				   <!-- <field name="equipement_id" />  -->
+              	</form>
+            </field>
+        </record>
+		<record id="ptr_equipement_code_tree_view" model="ir.ui.view">
+            <field name="name">ptr.equipement.code.tree</field>
+            <field name="model">ptr.equipement.code</field>
+            <field name="arch" type="xml">
+                <tree string="Code" version="7.0">
+                   <field name="code" /> 
+				</tree>
+            </field>
+        </record>
+
+	
+	<!-- Equipements -->
+		<record id="ptr_equipements_form_view" model="ir.ui.view">
+            <field name="name">ptr.equipements.form</field>
+            <field name="model">ptr.equipements</field>
+            <field name="arch" type="xml">
+                <form string="Equipements"  version="7.0">
+                   <field name="equipements_id" /> 
+                   <field name="quantity" /> 
+				   <field name="code_ids" />
+              	</form>
+            </field>
+        </record>
+		<record id="ptr_equipements_tree_view" model="ir.ui.view">
+            <field name="name">ptr.equipements.tree</field>
+            <field name="model">ptr.equipements</field>
+            <field name="arch" type="xml">
+                <tree string="Equipements" version="7.0">
+                   <field name="equipements_id" /> 
+                   <field name="quantity" /> 
+              	</tree>
+            </field>
+        </record>
+	
+	
+	<!-- Actions -->
+		<record id="ptr_equipement_act_view" model="ir.actions.act_window">
+            <field name="name">Local</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ptr.equipement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+			<field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new record.
+              </p>
+            </field>
+        </record>
+       
+	<!-- Menu -->
+		<menuitem id="ptr_equipement_management_menu" name="Equipement Management" parent="ptr_main_menu" />
+        <menuitem id="ptr_equipement_menu" name="Equipement" parent="ptr_equipement_management_menu" action="ptr_equipement_act_view" />
+		
+	</data>
+</openerp>

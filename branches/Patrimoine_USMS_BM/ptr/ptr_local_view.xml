@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ptr_local_form_view" model="ir.ui.view">
+            <field name="name">ptr.local.form</field>
+            <field name="model">ptr.local</field>
+            <field name="arch" type="xml">
+                <form string="Local" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h2> 
+								<label for="name" class="oe_edit_only" />
+								<field name="name"/> 
+							</h2>
+						</div>
+						<notebook >
+							<page string="Informations">
+								<group>
+									<field name="code"/>
+									<field name="seats"/>
+									<field name="etablissement_id"/>
+									<field name="category_id"/>
+								</group>
+							</page>
+							<page string="Equipements">
+								<field name="equipement_ids" nolabel="1" wigdet="many2many_kanban"/>
+							</page>
+						</notebook>
+                        <field name="note"/> 
+					</sheet>     
+                </form>
+            </field>
+        </record>
+		<record id="ptr_local_tree_view" model="ir.ui.view">
+            <field name="name">ptr.local.tree</field>
+            <field name="model">ptr.local</field>
+            <field name="arch" type="xml">
+                <tree string="Local" version="7.0">
+                    <field name="name"/> 
+					<field name="code" /> 
+					<field name="seats"/>
+					<field name="category_id"/>
+					<field name="etablissement_id"/>
+                </tree>
+            </field>
+        </record>
+		<record id="ptr_local_act_view" model="ir.actions.act_window">
+            <field name="name">Local</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ptr.local</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new record.
+              </p>
+            </field>
+        </record>
+        <menuitem id="ptr_local_management_menu" name="Local Management" parent="ptr_main_menu" />
+        <menuitem id="ptr_local_menu" name="Local" parent="ptr_local_management_menu" action="ptr_local_act_view" />
+		
+	</data>
+</openerp>
