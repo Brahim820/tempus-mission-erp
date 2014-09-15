@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    
+    
+    	<record id="action_draft" model="ir.actions.server">
+            <field name="name">Draft</field>
+            <field name="model_id" ref="model_mission_session"/>
+            <field name="state">code</field>
+            <field name="code">object.write({'state': 'draft'})</field>
+        </record>
+        
+       	<record id="action_confirm" model="ir.actions.server">
+            <field name="name">Confirm</field>
+            <field name="model_id" ref="model_mission_session"/>
+            <field name="state">code</field>
+            <field name="code">object.write({'state': 'confirmed'})</field>
+        </record>
+        
+        <record id="action_done" model="ir.actions.server">
+            <field name="name">Done</field>
+            <field name="model_id" ref="model_mission_session"/>
+            <field name="state">code</field>
+            <field name="code">object.write({'state': 'done'})</field>
+        </record>
+        
+      <record model="ir.ui.view" id="session_form_view">
+              <field name="name">session.form</field>
+              <field name="model">mission.session</field>
+              <field name="arch" type="xml">
+                  <form string="Session Form">
+						<group colspan="2" >
+							<separator string="General" colspan="2" col="2"/>
+							<field name="name" />
+							<field name="course_id" />
+							<field name="instructor_id" domain="[('instructor','=',True),'|',('category_id','=','Level1'),('category_id','=','level2')]"/>
+						</group>
+					    <group colspan="2">
+							<separator string="Schedule" colspan="2"/>
+							<field name="start_date"/>
+							<field name="duration"/>
+							<field name="seats" on_change="on_change_percent_takens_seats(seats,attendee_ids)"/>
+							<field name="attendee_count"/>
+							<field name="taken_seats" widget="progressbar"/>
+						</group>
+						<notebook colspan="4">
+								<page string="Attendees">
+									<field name="attendee_ids" colspan="4" nolabel="1" on_change="on_change_percent_takens_seats(seats,attendee_ids)">
+										<tree string="" editable="bottom">
+											<field name="partner_id" domain="[('instructor','=',False)]"/>
+										</tree>
+									</field>								
+								</page>
+								<page string="Other Information">
+									<field name="active"  />
+								</page>
+						</notebook>
+						<field name="state"/>
+						<group colspan="2">
+							<button string="Confirm" type="workflow" name="signal_confirm" states="draft"/>
+							<button string="Mark as done" type="workflow" name="signal_done" states="confirmed"/>
+							<button string="Reset to Draft" type="workflow"  name="signal_draft" states="confirmed,done"/>
+						</group>
+                  </form>
+              </field>
+          </record>
+		
+		<record model="ir.ui.view" id="session_tree_view">
+			<field name="name">session.tree</field>
+			<field name="model">mission.session</field>
+			<field name="arch" type="xml">
+			<tree string="Session Tree" colors="#0000FF:duration&lt;5;#FF0000:duration>15">
+				<field name="name"/>
+				<field name="course_id"/>
+				<field name="taken_seats" widget="progressbar"/>
+				<field name="duration" invisible="1"/>
+			</tree>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="session_calendar_view">
+		    <field name="name">session.calendar</field>
+		    <field name="model">mission.session</field>
+		    <field name="arch" type="xml">
+		    	<calendar string="Session Calendar" date_start="start_date" color="instructor_id">
+		             <field name="name"/>
+		        </calendar>
+		    </field>
+		</record>
+		
+		<record model="ir.ui.view" id="session_gantt">
+			<field name="name">session.gantt</field>
+			<field name="model">mission.session</field>
+			<field name="arch" type="xml">
+				<gantt string="Session Gantt" date_start="start_date" date_delay="duration" day_length="8" color="course_id">
+						<field name="name"/>
+				</gantt>
+			</field>
+		</record>
+		
+		
+		
+		<record model="ir.ui.view" id="session_graph_view">
+			<field name="name">session.graph</field>
+			<field name="model">mission.session</field>
+			<field name="arch" type="xml">
+				<graph string="Participations by Courses" type="bar">
+					<field name="course_id"/>
+					<field name="attendee_count" operator="+"/>
+					<field name="name"/>
+					
+				</graph>
+			</field>
+		</record>
+		
+		
+		<record model="ir.ui.view" id="session_kanban">
+			<field name="name">session.kanban</field>
+			<field name="model">mission.session</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban default_group_by="course_id">
+					<templates>
+						<t t-name="kanban-box">
+						<div class="oe_dropdown_kanban">
+						<!-- dropdown menu -->
+						<div class="oe_dropdown_toggle">
+						<ul class="oe_dropdown_menu">
+							<li><a type="edit">Edit</a></li>
+							<li><a type="delete">Delete</a></li>
+							<li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+						</ul>
+						</div>
+						<div class="oe_clear"></div>
+						</div>
+						<div t-attf-class="oe_kanban_content">
+							<!-- title -->
+							Session name : <field name="name"/> <br/>
+							Start date : <field name="start_date"/> <br/>
+							duration : <field name="duration"/>
+						</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+        <record model="ir.actions.act_window" id="session_list_action">
+			<field name="name">Sessions</field>
+			<field name="res_model">mission.session</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form,calendar,gantt,graph</field>
+		</record>
+
+    	<menuitem id="session_menu" name="Sessions" parent="mission_menu" action="session_list_action" />
+    
+    </data>
+</openerp>
+
+
+
+		
