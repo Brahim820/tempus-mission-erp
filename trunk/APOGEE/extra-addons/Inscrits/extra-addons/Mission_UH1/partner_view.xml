@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    
+		    <record model="ir.ui.view" id="partner_instructor_form_view">
+				<field name="name">partner.instructor.name</field>
+				<field name="model">res.partner</field>
+				<field name="type">form</field>
+				<field name="inherit_id" ref="base.view_partner_form" />
+				<field name="arch" type="xml">
+					<field name="category_id" position="after">
+						<label string="Is Instructor"/>
+						<field name="instructor"/>
+					</field>
+					<page string="Internal Notes" position="after">
+						<page string="Sessions">
+							<field name="session_ids" nolabel="1" colspan="4"/>
+						</page>
+					</page>
+					<field name="website" position="replace">
+						<field name="website" attrs="{'invisible':[('instructor','=',True),]}"/>
+					</field>
+					
+				</field>
+			</record>
+			
+			<menuitem id="partner_menu" name="Partners" parent="mission_menu" action="base.action_partner_form" />
+			
+		    
+    </data>
+</openerp>
+
