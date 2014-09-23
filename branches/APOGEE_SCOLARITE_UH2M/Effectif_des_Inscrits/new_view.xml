@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+    
+			<!--											 -->
+    		<!-- 			Vue Formulaire / Form			 -->
+			<!--											 -->
+
+    
+	        <record model="ir.ui.view" id="newdipfiliere_form_view">
+				<field name="name">newdipfiliere.form</field>
+				<field name="model">inscrits.newdipfiliere</field>
+				<field name="arch" type="xml">
+					<form string="New Dipfiliere Form">
+						<field name="cod_etab" colspan="4" />
+						<field name="lib_etab" colspan="4" />
+						<field name="cod_dip" colspan="4" />
+						<field name="lib_dip" colspan="4" />
+						<field name="cod_fil" colspan="4" />
+						<field name="lib_fil" colspan="4" />
+						<field name="annee" colspan="4" />
+						<field name="nbr" colspan="4" />
+					</form>
+				</field>
+			</record>
+	
+    
+			<!--											 				-->
+    		<!-- 				Vue Liste / Tree / Etab / Dip / Fil			-->
+			<!--											 				-->
+
+
+		 	<record model="ir.ui.view" id="newdipfiliere_tree_view">
+				<field name="name">newdipfiliere.tree</field>
+				<field name="model">inscrits.newdipfiliere</field>
+				<field name="arch" type="xml">
+					<tree string="New Dipfiliere Tree">
+						<field name="cod_etab" />
+						<field name="lib_etab" />
+						<field name="cod_dip" />
+						<field name="lib_dip" />
+						<field name="cod_fil" />
+						<field name="lib_fil" />
+						<field name="annee" />
+						<field name="nbr" />
+					</tree>
+				</field>
+			</record>
+			
+			<!--											 				-->
+    		<!-- 				Vue Liste / Tree / Etab / Prov				-->
+			<!--											 				-->
+
+		 	<record model="ir.ui.view" id="newprov_tree_view">
+				<field name="name">newprov.tree</field>
+				<field name="model">inscrits.newprov</field>
+				<field name="arch" type="xml">
+					<tree string="New Prov Tree">
+						<field name="cod_etab" />
+						<field name="lib_etab" />
+						<field name="cod_prov" />
+						<field name="lib_prov" />
+						<field name="annee" />
+						<field name="nbr" />
+					</tree>
+				</field>
+			</record>
+			
+    
+			<!--											 -->
+    		<!-- 					Vue Search	 			 -->
+			<!--											 -->
+
+		   <record id="newdipfiliere_search_view" model="ir.ui.view">
+	            <field name="name">newdipfiliere.search</field>
+	            <field name="model">inscrits.newdipfiliere</field>
+	            <field name="arch" type="xml">
+	                <search string="Search">
+						<field name="cod_etab" string="Code Etab" />
+						<field name="lib_etab" string="Lib Etab" />
+		                <separator/>
+						<field name="cod_dip" string="Code Diplome" />
+						<field name="lib_dip" string="Lib Diplome" />
+		                <separator/>
+						<field name="cod_fil" string="Code Filiere" />
+						<field name="lib_fil" string="Lib Filiere" />
+		                <separator/>
+						<field name="annee" string="Annee" />
+		                <group  string="Regrouper par :">
+		              		<filter string="Etablissement"  context="{'group_by':'cod_etab'}"/>
+		              		<filter string="Diplome"  context="{'group_by':'cod_dip'}"/>
+		              		<filter string="Filiere"  context="{'group_by':'cod_fil'}"/>
+		              		<filter string="Annee"  context="{'group_by':'annee'}"/>
+		                </group>
+	  				 </search>
+	            </field>
+        	</record>
+	        
+    
+			<!--											 -->
+    		<!-- 				Vue Graph / Etab			 -->
+			<!--											 -->
+
+			<record model="ir.ui.view" id="newetab_graph_view">
+				<field name="name">newdipfiliere.graph</field>
+				<field name="model">inscrits.newdipfiliere</field>
+				<field name="arch" type="xml">
+					<graph string="Effectif des nouveaux inscrits par Etab" type="pie">
+						<field name="cod_etab" />
+						<field name="nbr" operator="+"/>
+						
+					</graph>
+				</field>
+			</record>
+	        
+	        
+			<!--											 -->
+    		<!-- 				Vue Graph / Diplome			 -->
+			<!--											 -->
+
+			<record model="ir.ui.view" id="newdip_graph_view">
+				<field name="name">newdipfiliere.graph</field>
+				<field name="model">inscrits.newdipfiliere</field>
+				<field name="arch" type="xml">
+					<graph string="Effectif des nouveaux inscrits" type="pie">
+						<field name="lib_dip"/>
+						<field name="nbr" operator="+"/>
+					</graph>
+				</field>
+			</record>
+
+
+			<!--											 -->
+    		<!-- 				Vue Graph / Filiere			 -->
+			<!--											 -->
+
+			<record model="ir.ui.view" id="newfil_graph_view">
+				<field name="name">newdipfiliere.graph</field>
+				<field name="model">inscrits.newdipfiliere</field>
+				<field name="arch" type="xml">
+					<graph string="Effectif des nouveaux inscrits fil" type="bar" >
+						<field name="lib_fil"/>
+						<field name="nbr" operator="+"/>
+					</graph>
+				</field>
+			</record>
+	        
+    
+			<!--											 -->
+    		<!-- 				Vue Graph / Province			 -->
+			<!--											 -->
+
+			<record model="ir.ui.view" id="newprov_graph_view">
+				<field name="name">newprov.graph</field>
+				<field name="model">inscrits.newprov</field>
+				<field name="arch" type="xml">
+					<graph string="Effectif des nouveaux inscrits" type="bar">
+						<field name="lib_prov"/>
+						<field name="nbr" operator="+"/>
+					</graph>
+				</field>
+			</record>
+
+
+	       <record model="ir.actions.act_window" id="newdipfiliere_data_list_action">
+	            <field name="name">Effectif des nouveaux inscrits - données</field>
+	            <field name="res_model">inscrits.newdipfiliere</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">tree</field>
+	            <field name="context">{'search_default_instructor_filter':1}</field>
+	        </record>
+	        
+	       <record model="ir.actions.act_window" id="newprov_data_list_action">
+	            <field name="name">Effectif des nouveaux inscrits - données</field>
+	            <field name="res_model">inscrits.newprov</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">tree</field>
+	            <field name="context">{'search_default_instructor_filter':1}</field>
+	        </record>
+	        
+	       <record model="ir.actions.act_window" id="newdipfiliere_etab_list_action">
+	            <field name="name">Effectif des noueavux inscrits par Etablissement</field>
+	            <field name="res_model">inscrits.newdipfiliere</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">graph</field>
+	            <field name="view_id" ref="newetab_graph_view" />
+	            <field name="context">{'search_default_instructor_filter':1}</field>
+	        </record>
+	        
+	       <record model="ir.actions.act_window" id="newdipfiliere_dip_list_action">
+	            <field name="name">Effectif des nouveaux inscrits par Diplôme</field>
+	            <field name="res_model">inscrits.newdipfiliere</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">graph</field>
+	            <field name="view_id" ref="newdip_graph_view" />
+	            <field name="context">{'search_default_instructor_filter':1}</field>
+	        </record>
+	        
+	       <record model="ir.actions.act_window" id="newdipfiliere_fil_list_action">
+	            <field name="name">Effectif des nouveaux inscrits par Filière</field>
+	            <field name="res_model">inscrits.newdipfiliere</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">graph</field>
+	            <field name="view_id" ref="newfil_graph_view" />
+	            <field name="context">{'search_default_instructor_filter':1}</field>
+	        </record>
+	        
+	       <record model="ir.actions.act_window" id="newprov_prov_list_action">
+	            <field name="name">Effectif des nouveaux inscrits par Province</field>
+	            <field name="res_model">inscrits.newprov</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">graph</field>
+	            <field name="view_id" ref="newprov_graph_view" />
+	            <field name="context">{'search_default_instructor_filter':1}</field>
+	        </record>
+	
+	
+	    	<menuitem id="main_apogee_menu" name="APOGEE" />
+	    		<menuitem id="data_menu" name="Données de l'Effectif" parent="main_apogee_menu" sequence="11"/>
+	    			<menuitem id="newdipfiliere_data_menu" name="des nouveaux par Filière" parent="data_menu" action="newdipfiliere_data_list_action" sequence="14"/>
+	    			<menuitem id="newprov_data_menu" name="des nouveaux par Province" parent="data_menu" action="newprov_data_list_action" sequence="15"/>
+	    		<menuitem id="new_menu" name="Effectif des nouveaux inscrits" parent="main_apogee_menu" sequence="6"/>
+			    	<menuitem id="new_etab_menu" name="Par Etablissement" parent="new_menu" action="newdipfiliere_etab_list_action" sequence="7"/>
+			    	<menuitem id="new_dip_menu" name="Par Diplôme" parent="new_menu" action="newdipfiliere_dip_list_action" sequence="8"/>
+			    	<menuitem id="new_fil_menu" name="Par Filières" parent="new_menu" action="newdipfiliere_fil_list_action" sequence="9"/>
+					<menuitem id="new_prov_menu" name="Par Province" parent="new_menu" action="newprov_prov_list_action" sequence="10"/>
+    </data>
+</openerp>
