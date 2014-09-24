@@ -53,8 +53,9 @@
 									<field name="code"/>
 								</group>
 							</page>
-							<page string="Locals">
-									<field name="local_ids" no-label="1"/>
+							<page string="Locals and departement">
+									<field name="local_ids" no-label="0"/>
+									<field name="dep_ids" no-label="0" widget="many2many_kanban"/>
 							</page>
 						</notebook>
                         <field name="note"/> 

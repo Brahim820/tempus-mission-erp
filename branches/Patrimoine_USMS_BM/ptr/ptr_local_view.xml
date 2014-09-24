@@ -19,6 +19,7 @@
 									<field name="code"/>
 									<field name="seats"/>
 									<field name="etablissement_id"/>
+									<field name="departement_id"/>
 									<field name="category_id"/>
 								</group>
 							</page>

@@ -20,6 +20,7 @@ class ptr_etablissement(osv.osv):
 		'note': fields.text('Note'),
 		'image': fields.binary('image'),
 		'local_ids': fields.one2many('ptr.local','etablissement_id','Locals'),
+		'dep_ids': fields.one2many('ptr.departement','estabissement_id','Departement'),
 		'image_medium': fields.function(_get_image, fnct_inv=_set_image,
             string="Medium-sized image", type="binary", multi="_get_image",
             store = {

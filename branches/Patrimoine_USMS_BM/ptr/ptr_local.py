@@ -5,6 +5,7 @@ class ptr_local(osv.osv):
     _columns = {
         'name': fields.char('Name'),
 		'etablissement_id':fields.many2one('ptr.establissement','Etablissement'),
+		'departement_id':fields.many2one('ptr.departement','Departement'),
 		'code': fields.integer('Code'),
 		'note': fields.text('Note'),
 		'seats': fields.integer('Seats'),

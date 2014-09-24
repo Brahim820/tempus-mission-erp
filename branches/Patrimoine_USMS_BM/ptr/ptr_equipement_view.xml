@@ -104,8 +104,8 @@
                 <form string="Equipements"  version="7.0">
                    <field name="equipements_id" /> 
                    <field name="quantity" /> 
-				   <field name="code_ids" />
-              	</form>
+				   <!-- <field name="code_ids" /> -->
+               	</form>
             </field>
         </record>
 		<record id="ptr_equipements_tree_view" model="ir.ui.view">

@@ -54,7 +54,7 @@ class ptr_equipements(osv.osv):
     _description = 'Class of equipements'
     _columns = {
 		'equipements_id': fields.many2one('ptr.equipement','Equipements'),
-		'code_ids': fields.one2many('ptr.equipement.code','equipement_id','Codes'),
+		#'code_ids': fields.one2many('ptr.equipement.code','equipement_id','Codes'),
 		'local_id':fields.many2one('ptr.local','Local'),
 		'quantity': fields.integer('Quantity'),
 		
