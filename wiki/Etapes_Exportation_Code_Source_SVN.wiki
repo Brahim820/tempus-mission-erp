@@ -1,0 +1,94 @@
+#summary Principales étapes pour exporter son code source avec SVN
+#labels Phase-Deploy
+
+= Introduction =
+
+ * Une fois le code source devient important à sauvegarder ou à partager pour un travail collaboratif, il est alors indispensable de l’exporter sur un serveur de hosting comme code.google.com via la commande SVN,
+
+--------
+= Commandes =
+
+ * Voici les principales étapes pour exporter son code source, ce tutoriel est destiné notamment à l’équipe des développeurs du *Projet Tempus Mission*.
+
+----
+=== 1. Créer une branche ===
+
+ * Pour créer une branche du projet projet_rh on utilise cette commande :
+
+{{{
+svn copy https://tempus-mission-erp.googlecode.com/svn/trunk https://tempus-mission-erp.googlecode.com/svn/branches/projet_rh –m ’création de branche projet_rh’
+}}}
+
+=== 2. Supprimer un dossier de la branche ===
+
+ * Pour supprimer un dossier de la branche, *extra-addons* par exemple qui contient le projet *Mission_uh1*, voici les étapes :
+
+{{{
+svn delete https://tempus-mission-erp.googlecode.com/svn/branches/projet_rh/extra-addons
+}}}
+
+{{{
+Ctrl + x pour confirmer
+}}}
+
+{{{
+Choisissez (c) pour continuer puis cliquez sur Entrée
+}}}
+
+=== 3. Importation de la branche ===
+
+ * Après on importe la branche sur l’environnement de travail
+
+ * On crée un répertoire depot_mission sur le chemin suivant /home/kazacube qui sera le depot local :
+
+{{{
+root@ubuntu:/home/kazacube# mkdir depot_mission
+}}}
+
+{{{
+root@ubuntu:/home/kazacube# cd depot_mission
+}}}
+
+ * On importe le contenu de la branche dans le dépôt local
+
+{{{
+root@ubuntu:/home/kazacube/depot_mission# svn checkout https://tempus-mission-erp.googlecode.com/svn/branches/projet_rh
+}}}
+
+=== 4. Ajout d'un fichier ou dossier ===
+
+ * Pour ajouter un fichier ou un dossier dans le projet on le créer ou on le copie dans le depot local aprés on exécute cette commande :
+
+{{{
+root@ubuntu:/home/kazacube/depot_mission# svn add fichier
+}}}
+
+=== 5. Suppression d'un fichier ou dossier ===
+
+ * Pour supprimer un fichier ou un dossier du projet exécute cette commande :
+
+{{{
+root@ubuntu:/home/kazacube/depot_mission# svn delete fichier
+}}}
+
+{{{
+Ctrl + x pour confirmer
+}}}
+
+{{{
+Choisissez (c) pour continuer puis cliquez sur Entrée
+}}}
+
+=== 6. Sauvegarder les modifications ===
+
+ * Une fois notre travail est fini sur les fichiers du projet, ajout, modification et suppression on doit sauvegarder ces modifications, on exécute alors cette commande :
+
+{{{
+root@ubuntu:/home/kazacube/depot_mission# svn commit -m 'message log du commit'
+}}}
+
+----
+
+= Fin du tutoriel =
+
+
